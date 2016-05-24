@@ -17,6 +17,10 @@ one.put(function(request, response, next) {
     response.end('2. PUT 1 promotion '+ request.params.id + '\n');
 });
 
+one.post(function(request, response, next) {
+    response.end('2. POST 1 promotion '+ request.params.id + '???, please donnot\n');
+});
+
 one.delete(function(request, response, next) {
     response.end('3. DELETE 1 promotion '+ request.params.id + '\n');
 });
@@ -34,6 +38,10 @@ all.get(function(request, response, next) {
 
 all.post(function(request, response, next) {
     response.end("2. add promotions a new promotion\n");
+});
+
+all.put(function(request, response, next) {
+    response.end("2. update promotions ???, please donnot\n");
 });
 
 all.delete(function(request, response, next) {

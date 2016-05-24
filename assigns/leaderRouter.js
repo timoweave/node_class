@@ -17,6 +17,10 @@ one.put(function(request, response, next) {
     response.end('2. PUT 1 leadership '+ request.params.id + '\n');
 });
 
+one.post(function(request, response, next) {
+    response.end('2. POST 1 leadership '+ request.params.id + '??, please donnot\n');
+});
+
 one.delete(function(request, response, next) {
     response.end('3. DELETE 1 leadership '+ request.params.id + '\n');
 });
@@ -30,6 +34,10 @@ all.all(function(request, response, next) {
 
 all.get(function(request, response, next) {
     response.end("1. get all leaderships\n");
+});
+
+all.put(function(request, response, next) {
+    response.end("2. update leaderships all leadership???? please, donnot\n");
 });
 
 all.post(function(request, response, next) {
