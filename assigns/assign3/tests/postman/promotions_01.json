@@ -1,0 +1,55 @@
+{
+	"id": "2103a853-4cba-17ac-2059-567755d6ce55",
+	"name": "promotions",
+	"description": "",
+	"order": [
+		"55c285b3-4b7d-be5c-e86d-8cf01372964d",
+		"7f9062c5-5ac6-fa7b-82ce-3b0db34c51a5"
+	],
+	"folders": [],
+	"timestamp": 1464548271966,
+	"owner": "625125",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "55c285b3-4b7d-be5c-e86d-8cf01372964d",
+			"headers": "",
+			"url": "localhost:3000/promotions",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "2103a853-4cba-17ac-2059-567755d6ce55",
+			"data": null,
+			"dataMode": "params",
+			"name": "get empty promotion",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1464548504166,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "7f9062c5-5ac6-fa7b-82ce-3b0db34c51a5",
+			"headers": "",
+			"url": "localhost:3000/promotions",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": "var data = JSON.parse(responseBody);\ntests[\"remove promotions\"] = data.promotion === \"removed\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1464548571493,
+			"name": "remove all promotions",
+			"description": "",
+			"collectionId": "2103a853-4cba-17ac-2059-567755d6ce55",
+			"responses": []
+		}
+	]
+}
