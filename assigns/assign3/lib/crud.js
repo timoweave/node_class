@@ -23,7 +23,6 @@ function update_one(Model, model_name, model_id)
     return function crud_update_one(request, response, next)
     { // PUT /:id
         var id = request.params.id;
-        if (!Number.isInteger(id)) { next(); }
 
         var criteria = {};
         criteria[uniq_id] = id;
@@ -40,7 +39,6 @@ function remove_one(Model, model_name, model_id)
     return function remove_one(request, response, next)
     { // DELETE /:id
         var id = request.params.id;
-        if (!Number.isInteger(id)) { next(); }
 
         var criteria = {};
         criteria[uniq_id] = id;
@@ -60,19 +58,17 @@ function get_one(Model, model_name, model_id)
     return function crud_get_one(request, response, next)
     { // GET /:id
         var id = request.params.id;
-        if (!Number.isInteger(id)) { next(); }
 
         var criteria = {};
         criteria[uniq_id] = id;
         // console.log(uniq_id, model_id, model_name + "_id_");
         console.log(criteria);
         Model.find(criteria, function(find_error, find_model) {
+            console.log(find_model);
             if (find_error) { throw find_error; }
-            // response.setHeader("Content-Type", "application/json")
-            response.json(find_model);
-            return ;
-            // response.json(find_model);
-            // console.log("get id ", id);
+            else {
+                response.json(find_model);
+            }
         });
     }
 }
@@ -117,8 +113,7 @@ function get_all(Model, model_name)
         // console.log("hello", model_name);
         Model.find({}, function(find_err, find_models) {
             if (find_err) { throw find_err; }
-            response.end(JSON.stringify(find_models));
-            // response.json(find_models);
+            response.json(find_models);
         });
     }
 }

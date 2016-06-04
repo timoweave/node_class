@@ -1,9 +1,10 @@
 {
-    "name": "rest_server2",
+    "name": "assign3",
     "version": "0.0.0",
     "private": true,
     "scripts": {
         "start": "node ./bin/www",
+        "start_debug": "DEBUG=express:* node ./bin/www",
         "newman": "newman",
         "mongodb_server": "docker run -i -d -t -v $(PWD):/work -w /work -p 192.168.99.100:27017:27017 mongo:latest",
         "cleanup" : "find . -iname '*~' -exec rm -f {} \\;"

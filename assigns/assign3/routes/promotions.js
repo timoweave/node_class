@@ -17,7 +17,7 @@ var all_routes = router.route("/")
                  .post(authen.verifyAdmin, crud.create_one(Promotion, "Promotion"))
                  .delete(authen.verifyAdmin, crud.remove_all(Promotion, "Promotion"));
 
-var one_routes = router.route("/:id")
+var one_routes = router.route("/:id(\\d+)")
                  .get(crud.get_one(Promotion, "Promotion", "promotion_id"))
                  .put(authen.verifyAdmin, crud.update_one(Promotion, "Promotion", "promotion_id"))
                  .post(authen.verifyAdmin, crud.cannot_do_it(Promotion, "Promotion"))
