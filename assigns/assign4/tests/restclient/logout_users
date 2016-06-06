@@ -1,0 +1,128 @@
+# -*- restclient -*-
+
+:token-user = 0
+:token-admin = 0
+:url-site = http://localhost:3000
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "admin",
+        "password" : "admin",
+}
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "root",
+        "password" : "root",
+}
+
+
+#
+
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "sudoer",
+        "password" : "sudoer",
+}
+
+#
+
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "chef",
+        "password" : "chef",
+}
+
+#
+
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "baker",
+        "password" : "baker",
+}
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "joe",
+        "password" : "joe",
+}
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "alex",
+        "password" : "alex",
+}
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "mark",
+        "password" : "mark",
+}
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "nick",
+        "password" : "nick",
+}
+
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "luke",
+        "password" : "luke",
+}
+
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "luke",
+        "password" : "luke",
+}
+
+#
+
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "tim",
+        "password" : "tim",
+}
+
+#
+
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "karen",
+        "password" : "karen",
+}
+
+#
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+{
+        "username" : "becky",
+        "password" : "becky",
+}
+
+#
+GET http://localhost:3000/users

@@ -1,0 +1,23 @@
+# -*- restclient -*-
+:token = 
+#
+
+GET http://localhost:3000/dishes
+Content-Type: application/json
+
+#
+
+POST http://localhost:3000/dishes
+Content-Type: application/json
+{
+   "name":"ramen", "image":"noodles", "category":"noodles", "label" :"spicy",
+   "price":"10.99", "description":"homemade noodles",
+   
+}
+
+#
+POST http://localhost:3000/dishes
+Content-Type: application/json
+
+POST http://localhost:3000/dishes
+Content-Type: application/json

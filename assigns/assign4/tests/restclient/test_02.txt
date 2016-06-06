@@ -1,0 +1,102 @@
+# -*- restclient -*-
+
+#
+
+GET http://localhost:3000/users
+
+#
+
+GET http://localhost:3000/users/4
+x-access-token: 
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{
+ "username":"meyoui",
+ "password":"1234"
+}
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{
+ "username":"meyoui",
+ "password":"1234"
+}
+
+#
+POST http://localhost:3000/users/register
+Content-Type: application/json
+{
+ "username":"hey",
+ "password":"hey"
+}
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{
+ "username":"hey",
+ "password":"hey"
+}
+
+#
+
+GET http://localhost:3000/dishes
+x-access-token: 
+
+# 
+GET http://localhost:3000/dishes
+x-access-token:
+
+#
+
+POST http://localhost:3000/users/register
+Content-Type: application/json
+{
+ "username":"big",
+ "password":"big",
+}
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{
+ "username":"big",
+ "password":"big"
+}
+
+#
+POST http://localhost:3000/users/register
+Content-Type: application/json
+{
+ "username":"admin",
+ "password":"admin"
+}
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{
+ "username":"admin",
+ "password":"admin"
+}
+
+#
+GET http://localhost:3000/users/logout
+Content-Type: application/json
+x-access-token: 
+
+#
+GET http://localhost:3000/users
+Content-Type: application/json
+x-access-token: 
+
+
+# crashed not ready ??
+GET http://localhost:3000/users/3
+Content-Type: application/json
+x-access-token: 

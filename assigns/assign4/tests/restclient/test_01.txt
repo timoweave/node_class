@@ -1,0 +1,87 @@
+# -*- restclient -*-
+
+:token-user = 0
+:token-admin = 0
+:url-site = http://localhost:3000
+
+#
+
+GET https://api.github.com
+User-Agent: Emacs Restclient
+
+#
+GET http://www.redmine.org/issues.xml?limit=10
+
+#
+GET http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png
+
+#
+
+GET :url-site/leaderships
+Content-Type: application/json
+
+#
+
+GET :url-site/promotions
+Content-Type: application/json
+
+#
+
+GET :url-site/dishes
+Content-Type: application/json
+
+#
+
+POST :url-site/promotions
+Content-Type: application/json
+{
+ "name" : "cheesecake",
+ "image" : "cake_picture.jpg",
+ "label" : "dessert",
+ "price" : "19.49",
+ "description" : "award wining cheesecake"
+}
+
+#
+
+POST http://localhost:3000/leaderships/
+Content-Type: application/json
+
+{
+    "name" : "roger davidson",
+    "image" : "roger_picture.jpg",
+    "designation" : "manager",
+    "abbr" : "MR",
+    "description" : "awesome person"
+}
+
+#
+
+
+POST http://localhost:3000/leaderships/
+Content-Type: application/json
+
+{
+    "name" : "superman",
+    "image" : "super.png",
+    "designation" : "journalist",
+    "abbr" : "Mr",
+    "description" : "awesome super person"
+}
+
+#
+POST http://localhost:3000/leaderships/
+Content-Type: application/json
+{
+ "name" : "adam the first",
+ "abbr" : "nobody",
+ "designation" : "temp",
+ "description" : "do something fun now, and worry no more..."
+}
+#
+
+GET http://localhost:3000/leaderships/
+Content-Type: application/json
+
+#
+DELETE http://localhost:3000/leaderships/

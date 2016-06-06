@@ -1,0 +1,177 @@
+# -*- restclient -*-
+
+:token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwic2VsZWN0ZWQiOnt9LCJnZXR0ZXJzIjp7fSwid2FzUG9wdWxhdGVkIjpmYWxzZSwiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsiZmlyc3RuYW1lIjoiaW5pdCIsImxhc3RuYW1lIjoiaW5pdCIsImFkbWluIjoiaW5pdCIsIl9fdiI6ImluaXQiLCJ1c2VybmFtZSI6ImluaXQiLCJwYXNzd29yZCI6ImluaXQiLCJoYXNoIjoiaW5pdCIsInNhbHQiOiJpbml0IiwidXNlcl9pZCI6ImluaXQiLCJfaWQiOiJpbml0In0sInN0YXRlcyI6eyJpZ25vcmUiOnt9LCJkZWZhdWx0Ijp7fSwiaW5pdCI6eyJfX3YiOnRydWUsImZpcnN0bmFtZSI6dHJ1ZSwibGFzdG5hbWUiOnRydWUsImFkbWluIjp0cnVlLCJ1c2VybmFtZSI6dHJ1ZSwicGFzc3dvcmQiOnRydWUsImhhc2giOnRydWUsInNhbHQiOnRydWUsInVzZXJfaWQiOnRydWUsIl9pZCI6dHJ1ZX0sIm1vZGlmeSI6e30sInJlcXVpcmUiOnt9fSwic3RhdGVOYW1lcyI6WyJyZXF1aXJlIiwibW9kaWZ5IiwiaW5pdCIsImRlZmF1bHQiLCJpZ25vcmUiXX0sImVtaXR0ZXIiOnsiZG9tYWluIjpudWxsLCJfZXZlbnRzIjp7fSwiX2V2ZW50c0NvdW50IjowLCJfbWF4TGlzdGVuZXJzIjowfX0sImlzTmV3IjpmYWxzZSwiX2RvYyI6eyJmaXJzdG5hbWUiOiJyb290IiwibGFzdG5hbWUiOiJzdXBlciIsImFkbWluIjp0cnVlLCJfX3YiOjAsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiaGFzaCI6IjU4MmVjMjQ2Zjk2ODU5ZGRlMmIxNjBkMmY3ZjVlY2RiNTA0MGM3NGYzODQ4YjczNjBhMTEzNjg5NDZhYzk0ZTRlMjliZDM0YjhhNDQxODhkZTNmNzA2NDk3MmRhYTgzNmU0YmNhNGFhNTcwNmI0ZmI4NmM3NjVmYzhlYjVhNDJiZGU5NDhkMWY1ZTc5ZjdlZjVmMzViNWQ3ZjUzYzVhNmZmNzA0MGZmZDg4MzE5ZmE4OGFjNmIyMTNlNGM2OTY1OTg4ZTE5MTQwYzc3NmI5NzgzMWFkZjNhYTU2ZGViMTk4ODNlYmU1ODgyYmRlNGFjNTc0ZjkzMjNmMzgwNTU3MWRhODNkMmI2MWQ4MmI0ZWY4ZDAwNTQ1NzI2MzJlYTZkNTkwZWFlZmU2ODdhNWJhNTQ0MGY2ZDdiMDgwYWJkYTljZWQ2YTdkOGRlNWEzZDZmYjVjZGRjNTAzOTg1M2E3ODViN2ViOGU1MDA0YmE4ZGJmMDEyNmJlZmY5MzA1NmZiOWZjYmQwMjA3ZWRhMDQ3NTdjNzg4YmY3NmY1YjMwZGQ0MjU0MzYyOWQ5MDljMGZmNWY3ZjUzZjJlZTZmZDczMDU0NGI0ZWE1YmYxMjUxMjMzNjhmMzdkMDU5YzJkNGJiYzYyNzEyZGE3M2Y1ZTk3ZDkyYTdjOGM3ZDFhZDBmOTkyN2E1OTE3ODBjYTg2ODg5Mjk3YTZiODU0MTUzMGFmZWQxNjY5ZTkzYzMyZjE1ODNiNmQ0Y2UyZjcyNDA4NmY1ODI4YzZlZDkxNDM4OTUxY2VlZTc2OWM2MWYyNDJlODdiN2UyNTI1OTI5OGM1MzgxNDkzODZhZjZlODc3ZDZlM2ZmNzFlYTYwMjI5YWVlMjc2ZDA2NWMyZmJjNzA5M2ZiNWIxN2YyZTEwYmFhZTNkNTBiZGI0ZjdlMzAwNzlmNzRiYjc5N2I1MDBlMGRiNjc5YTMxOTFiMGRhMzE2YzE3YTc0MjlkM2JmYWU1ZWI3NmJhOWVkZGU2MDI4MTI1NjZhOTQzNjQ5NTljNDA4YTU1OWViMjM1ZDAzYzhmNjYzYjQ1ZDg2YjI4M2I2ZTg3ZWQ2YmYxMmYzYzQyYjA3YzNhYTk1NjAzMWUyMTJmZmFlNWZhZmM5ZDU0NTQ3MWNmMTNmMWQ3YWFlNGQ0YjM0YTRhY2ExZDM3NTlkMGYxMWYxM2Q3MmZjNDJmZDFkYWUwNjkyYjg2ODFlOWFiZTE5NjllYzdlZGY2NTFmMGYxYzk1MTFkYjgxODM1ZjZmNGM1YzAxMDY5OTJiYjkyZDY1ZThiOWY3MWFmMGVmYWVkMTQ2ZmY1NjhiNjI0YmU1Y2M3YjZhZDg0ZDQ4Mjk1MTlkZDZlNmUiLCJzYWx0IjoiMTc2MWFhMTkxODQyMjVkMDMyMzdhYTI1Y2JhZDQ1YzAzYzUyMjU2YjIyNDlkOGJmYzM1MzNjZWZiM2FmY2JkNyIsInVzZXJfaWQiOjEsIl9pZCI6IjU3NTFlMGU1MjlkOGVkYTMwMzg2YmI3NCJ9LCJfcHJlcyI6eyIkX19vcmlnaW5hbF9zYXZlIjpbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsXX0sIl9wb3N0cyI6eyIkX19vcmlnaW5hbF9zYXZlIjpbXX0sImlhdCI6MTQ2NTI1MDYxMywiZXhwIjoxNDY1MjU0MjEzfQ.X1aHLsxRNJxXSk9_DcIPi-emawQa6K4KXSm19lznVks
+ 
+:root-url = http://localhost:3000
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "admin", "password" : "admin" }
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "root", "password" : "root" }
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "sudoer", "password" : "sudoer" }
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "chef", "password" : "chef" }
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "baker", "password" : "baker" }
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "joe", "password" : "joe" }
+
+# login alex
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "alex", "password" : "alex" }
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "mark", "password" : "mark" }
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "nick", "password" : "nick" }
+
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "luke", "password" : "luke" }
+
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "luke", "password" : "luke" }
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "tim", "password" : "tim" }
+
+#
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "karen", "password" : "karen" }
+
+#
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{ "username" : "becky", "password" : "becky" }
+
+#
+GET http://localhost:3000/users
+x-access-token: :token
+
+# 
+GET http://localhost:3000/dishes
+x-access-token: :token
+
+# 
+GET http://localhost:3000/dishes/3
+x-access-token: :token
+
+# 
+GET http://localhost:3000/dishes/1/comments
+x-access-token: :token
+
+#
+
+# 
+POST http://localhost:3000/dishes/1/comments
+x-access-token: :token
+Content-Type: application/json
+{ "rating" : "4", "comment": "summer snack", "postedBy" : "admin(get it from decode instead)" }
+
+
+# 
+GET http://localhost:3000/dishes/1/comments
+x-access-token: :token
+Content-Type: application/json
+
+
+# 
+GET http://localhost:3000/dishes/1
+x-access-token: :token
+Content-Type: application/json
+
+# 
+GET http://localhost:3000/dishes
+x-access-token: :token
+Content-Type: application/json
+
+# 
+
+DELETE http://localhost:3000/dishes/1/comments/0
+x-access-token: :token
+
+# 
+GET http://localhost:3000/dishes/3000/comments
+x-access-token: :token
+
+# 
+GET http://localhost:3000/favorites
+x-access-token: :token
+
+# 
+POST http://localhost:3000/favorites
+x-access-token: :token
+Content-Type: application/json
+{ "dish_id" : "2" }
+
+# 
+GET http://localhost:3000/favorites
+x-access-token: :token
+
+ 
+# 
+GET http://localhost:3000/favorites/1
+x-access-token: :token
+
+# 
+GET http://localhost:3000/favorites/2
+x-access-token: :token
+
+# 
+DELETE http://localhost:3000/favorites/2
+x-access-token: :token
+
+
+# 
+DELETE http://localhost:3000/favorites
+x-access-token: :token
+
+
+#
+
+
+# comment = {"rating":"", "comment":"", "postedBy":"admin"}
+# dish = {"name":"","image":"","category":"","label":"","price":"","description":""}
+# user = {"username":"","password":"","firstname":"","lastname":"","email":"","phone":"","admin":""}
+# promotion = {"name":"","image":"","label":"","price":"","description":""}
+# leadership =  {"name":"","image":"","designation":"","abbr":"","description":""}
+
+# 
+GET http://localhost:3000/dishes/3000/comments

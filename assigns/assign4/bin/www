@@ -1,0 +1,144 @@
+#!/usr/bin/env node
+
+var app = require('../app');
+var debug = require('debug')('assign4:server');
+var config = config_server(app);
+var server = create_server(app, config.port);
+var secureServer = create_secure_server(app, config.secure_port);
+
+function config_server(app) {
+    var port = normalizePort(process.env.PORT || '3000');
+    var secure_port = port + 443;
+    app.set('port', port);
+    app.set('securePort', secure_port);
+    return { port : port, secure_port : secure_port};
+}
+
+function create_server(app, port)
+{
+    port = port || app.get('port');
+    /**
+     * Create HTTP server.
+     */
+    var http = require('http');
+    var server = http.createServer(app);
+
+    /**
+     * Listen on provided port, on all network interfaces.
+     */
+    
+    server.listen(port);
+    server.on('error', onError(server, port));
+    server.on('listening', onListening(server));
+    // server.on('connection', onConnect(server, port));
+    return server;
+}
+
+function create_secure_server(app, port)
+{
+    return null; // TEST: when testing
+    /**
+     * Create SECURED HTTP server.
+     */
+    var fs = require('fs');
+    var options = {
+        key: fs.readFileSync(__dirname + "/private.key"),
+        cert : fs.readFileSync(__dirname + "/certificate.pem")
+    };
+    
+    port = port || app.get('securePort');
+    var https = require('https');
+    var server = https.createServer(options, app);
+    
+    server.listen(port);
+    server.on('error', onError(server, port));
+    server.on('listening', onListening(server));
+    // server.on('connection', onConnect(server, port));
+    return server;
+}
+
+
+
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(server, port) {
+    return function onError(error) {
+        if (error.syscall !== 'listen') {
+            throw error;
+        }
+        
+        var bind = typeof port === 'string'
+                 ? 'Pipe ' + port
+                 : 'Port ' + port;
+        
+        // handle specific listen errors with friendly messages
+        switch (error.code) {
+            case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+            case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+            default:
+            throw error;
+        }
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening(server) {
+    return function () {
+        var addr = server.address();
+        // var host = server.get('host');
+        var bind = typeof addr === 'string'
+                 ? 'pipe ' + addr
+                 : 'port ' + addr.port;
+        debug('Listening on ' + bind);
+        // console.log('Listening on : ', host, bind);
+        console.log('Listening on : ', bind);
+    }
+}
+
+function onConnect(request, client_socket, head) {
+    return function () {
+        console.log('connect to : ', request.url);
+        /*
+var addr = server.address();
+var host = server.get('host');
+var bind = typeof addr === 'string'
+? 'pipe ' + addr
+: 'port ' + addr.port;
+debug('connect to ' + bind);
+// console.log('connect to : ', host, bind);
+console.log('connect to : ', request.url);
+         */
+    }
+}
